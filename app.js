@@ -33,4 +33,4 @@ app.use('/comments', commentsRouter)
 app.use('/community', subRedditRouter)
 app.use('/user', userRouter)
 
-app.listen(2000, () => console.log('Server Started on port 2000'))
+app.listen(process.env.PORT, () => console.log(`Server Started on port ${process.env.PORT}`))
