@@ -7,6 +7,7 @@ import commentsRouter from './routes/comments.js';
 import subRedditRouter from './routes/subreddit.js';
 
 const app = express()
+const PORT = process.env.PORT;
 const dbURL = 'mongodb+srv://TheOneWhoWill:Cybercrafter345@main-cluster.yedkf.mongodb.net/AppllicationDB?retryWrites=true&w=majority';
 
 app.use(express.json())
@@ -32,4 +33,4 @@ app.use('/comments', commentsRouter)
 app.use('/community', subRedditRouter)
 app.use('/user', userRouter)
 
-app.listen(2000, () => console.log('Server Started on port 2000'))
+app.listen(PORT, () => console.log(`Server Started on port ${PORT}`))
