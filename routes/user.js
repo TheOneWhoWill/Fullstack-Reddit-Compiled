@@ -31,6 +31,21 @@ router.get('/:user', async (req, res) => {
 
 })
 
+// Getting Coins from User
+router.get('/:user/coins', async (req, res) => {
+
+  var id = req.params.user;
+
+  Users.find({uid: id})
+    .then((result) => {
+      res.send(result.coins);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+
+})
+
 // Join a Cummunity
 router.post('/join/:id', (req, res) => {
 
