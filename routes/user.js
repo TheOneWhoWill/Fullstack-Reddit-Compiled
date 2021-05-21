@@ -38,7 +38,7 @@ router.get('/:user/coins', async (req, res) => {
 
   Users.find({uid: id})
     .then((result) => {
-      res.send(result.coins);
+      res.json(result[0].coins);
     })
     .catch((error) => {
       console.log(error);

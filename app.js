@@ -2,12 +2,13 @@ import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import userRouter from './routes/user.js';
+import awardRouter from './routes/award.js';
 import postsRouter from './routes/posts.js';
 import commentsRouter from './routes/comments.js';
 import subRedditRouter from './routes/subreddit.js';
 
 const app = express()
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 2000;
 const dbURL = 'mongodb+srv://TheOneWhoWill:Cybercrafter345@main-cluster.yedkf.mongodb.net/AppllicationDB?retryWrites=true&w=majority';
 
 app.use(express.json())
@@ -32,5 +33,6 @@ app.use('/posts', postsRouter)
 app.use('/comments', commentsRouter)
 app.use('/community', subRedditRouter)
 app.use('/user', userRouter)
+app.use('/award', awardRouter)
 
 app.listen(PORT, () => console.log(`Server Started on port ${PORT}`))
