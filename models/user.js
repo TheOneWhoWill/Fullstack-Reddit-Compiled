@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
   uid: String,
-  joined: Array
+  joined: Array,
+  coins: Number
 })
 
 const Users = mongoose.model('Users', userSchema, 'Users');
