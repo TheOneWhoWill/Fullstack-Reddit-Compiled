@@ -9,7 +9,7 @@ import subRedditRouter from './routes/subreddit.js';
 
 const app = express()
 const PORT = process.env.PORT || 2000;
-const dbURL = 'mongodb+srv://TheOneWhoWill:Cybercrafter345@main-cluster.yedkf.mongodb.net/AppllicationDB?retryWrites=true&w=majority';
+const dbURL = '';
 
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: false }))
